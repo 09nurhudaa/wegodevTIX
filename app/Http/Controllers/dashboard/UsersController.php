@@ -16,7 +16,7 @@ class UsersController extends Controller
     public function index(User $users)
     {
         $active = 'Users';
-        $users = $users->paginate(10);
+        $users = $users->paginate(15);
         return view('dashboard/users/list', [
             'users' => $users,
             'active' => $active

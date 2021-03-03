@@ -34,7 +34,9 @@
             @endforeach
 
         </table>
+        {{ $users->links('pagination::bootstrap-4') }}
     </div>
+
 </div>
 
 
