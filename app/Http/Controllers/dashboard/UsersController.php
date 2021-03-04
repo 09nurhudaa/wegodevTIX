@@ -13,10 +13,20 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(User $users)
+    public function index(Request $request, User $users)
     {
+        $q = $request->input('q');
+
         $active = 'Users';
-        $users = $users->paginate(15);
+
+        //fungsi pencarian
+        $users = $users->when($q, function ($query) use ($q) {
+            return $query
+                ->where('name', 'like', '%' . $q . '%')
+                ->orWhere('email', 'like', '%' . $q . '%');
+        })
+            ->paginate(15);
+
         return view('dashboard/users/list', [
             'users' => $users,
             'active' => $active

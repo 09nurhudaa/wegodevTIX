@@ -8,11 +8,25 @@
             <div class="col-8">
                 <h3>Users List</h3>
             </div>
+
+            <!-- form search -->
+            <div class="col-4">
+                <form method="GET" action="{{ url('dashboard/users') }}">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="q">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary btn-sm">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
+
+    <!-- Form List -->
     <div class="card-body p-0">
         <table class="table table-striped table-hover table-bordered">
-
             <tr>
                 <th>#</th>
                 <th>Nama</th>
