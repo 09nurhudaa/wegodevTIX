@@ -27,8 +27,10 @@ class UsersController extends Controller
         })
             ->paginate(15);
 
+        $request = $request->all();
         return view('dashboard/users/list', [
             'users' => $users,
+            'request' => $request,
             'active' => $active
         ]);
     }
@@ -73,7 +75,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = USER::find($id);
+        $active = 'Users';
+        return view('dashboard/users/form', ['user' => $user, 'active' => $active]);
     }
 
     /**
@@ -85,7 +89,11 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = USER::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+        return redirect('dashboard/users');
     }
 
     /**

@@ -13,7 +13,7 @@
             <div class="col-4">
                 <form method="GET" action="{{ url('dashboard/users') }}">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="q">
+                        <input type="text" class="form-control" name="q" value="{{ $request['q'] ?? '' }}">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-secondary btn-sm">Search</button>
                         </div>
@@ -33,6 +33,7 @@
                 <th>Email</th>
                 <th>Registered</th>
                 <th>Edited</th>
+                <th>&nbsp;</th>
             </tr>
 
             @foreach ($users as $user)
@@ -43,6 +44,7 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
+                <td><a href="{{ url('dashboard/user/edit/'.$user->id) }}" class="btn btn-success btn-sm">Edit</a></td>
             </tr>
 
             @endforeach
