@@ -5,7 +5,7 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col-8">
+            <div class="col-8 align-self-center">
                 <h3>Users Data</h3>
             </div>
 
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Form Update data user -->
-    <div class="card-body p-0">
+    <div class="card-body">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <form method="post" action="{{ url('dashboard/user/update/'.$user->id) }}">
@@ -31,7 +31,8 @@
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" value="{{ $user->email }}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-0">
+                        <button type="button" onclick="window.history" class="btn btn-sm btn-secondary">Cancel</button>
                         <button type="submit" class="btn btn-success btn-sm">Update</button>
                     </div>
                 </form>
