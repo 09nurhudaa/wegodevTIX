@@ -6,10 +6,9 @@
     <div class="card-header">
         <div class="row">
             <div class="col-8">
-                <h3>Users Edit</h3>
+                <h3>Users Data</h3>
             </div>
 
-            <!-- form search -->
             <div class="col-4 text-right">
                 <button class="btn btn-sm text-secondary" data-toggle="modal" data-target="#deleteModal">Delete</button>
             </div>
@@ -17,7 +16,7 @@
         </div>
     </div>
 
-    <!-- Form List -->
+    <!-- Form Update data user -->
     <div class="card-body p-0">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -43,10 +42,10 @@
 
 </div>
 
+<!-- membuat delete -->
 <div class="modal fade" id="deleteModal">
     <div class="modal-dialog">
         <div class="modal-content">
-
             <div class="modal-header">
                 <h5>Delete</h5>
             </div>
@@ -61,6 +60,7 @@
                     @method('delete')
                     <button class="btn btn-sm btn-danger">Delete</button>
                 </form>
+
             </div>
         </div>
     </div>

@@ -87,6 +87,8 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //fungsi update data
     public function update(Request $request, $id)
     {
         $user = USER::find($id);
@@ -102,6 +104,8 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //fungsi delete data
     public function destroy($id)
     {
         $user = USER::find($id);
