@@ -10,7 +10,9 @@
             </div>
 
             <div class="col-4 text-right">
-                <button class="btn btn-sm text-secondary" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <button class="btn btn-sm text-secondary" data-toggle="modal" data-target="#deleteModal">
+                    <i class="fas fa-trash"></i>
+                </button>
             </div>
 
         </div>
@@ -32,7 +34,7 @@
                         <input type="text" class="form-control" name="email" value="{{ $user->email }}">
                     </div>
                     <div class="form-group mb-0">
-                        <button type="button" onclick="window.history" class="btn btn-sm btn-secondary">Cancel</button>
+                        <button type="button" onclick="window.history.back()" class="btn btn-sm btn-secondary">Cancel</button>
                         <button type="submit" class="btn btn-success btn-sm">Update</button>
                     </div>
                 </form>
@@ -59,7 +61,7 @@
                 <form action="{{url('dashboard/user/delete/'.$user->id)}}" method="POST">
                     @csrf
                     @method('delete')
-                    <button class="btn btn-sm btn-danger">Delete</button>
+                    <button class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> Delete</button>
                 </form>
 
             </div>
