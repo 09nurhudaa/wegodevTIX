@@ -29,4 +29,7 @@ Route::get('/dashboard/users', [App\Http\Controllers\dashboard\UsersController::
 Route::get('/dashboard/user/edit/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'edit']);
 
 //user update
-Route::post('/dashboard/user/update/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'update']);
+Route::put('/dashboard/user/update/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'update']);
+
+//user delete
+Route::delete('/dashboard/user/delete/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'destroy']);
