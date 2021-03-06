@@ -23,13 +23,13 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\dashboard\DashboardController::class, 'index']);
 
 //users List
-Route::get('/dashboard/users', [App\Http\Controllers\dashboard\UsersController::class, 'index']);
+Route::get('/dashboard/users', [App\Http\Controllers\dashboard\UsersController::class, 'index'])->name('users');
 
 //user Edit
-Route::get('/dashboard/user/edit/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'edit']);
+Route::get('/dashboard/users/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'edit'])->name('edit');
 
 //user update
-Route::put('/dashboard/user/update/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'update']);
+Route::put('/dashboard/users/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'update'])->name('update');
 
 //user delete
-Route::delete('/dashboard/user/delete/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'destroy']);
+Route::delete('/dashboard/users/{id}', [App\Http\Controllers\dashboard\UsersController::class, 'destroy'])->name('delete');
