@@ -37,19 +37,29 @@ class Menu extends Component
     {
         return [
             [
-                'label' => 'Dashboard'
+                'label' => 'Dashboard',
+                'route' => 'dashboard',
+                'icon'  => 'fas fa-tachometer-alt'
             ],
             [
-                'label' => 'Movies'
+                'label' => 'Movies',
+                'route' => 'movies',
+                'icon'  => 'fas fa-video'
             ],
             [
-                'label' => 'Theaters'
+                'label' => 'Theaters',
+                'route' => 'theaters',
+                'icon'  => 'fas fa-university'
             ],
             [
-                'label' => 'Tickets'
+                'label' => 'Tickets',
+                'route' => 'tickets',
+                'icon'  => 'fas fa-ticket-alt'
             ],
             [
-                'label' => 'Users'
+                'label' => 'Users',
+                'route' => 'users',
+                'icon'  => 'fas fa-users'
             ],
         ];
     }
