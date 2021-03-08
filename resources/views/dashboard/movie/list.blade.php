@@ -26,6 +26,7 @@
 
     <!-- Form List -->
     <div class="card-body p-0">
+        @if($movies->total())
         <table class="table table-striped table-hover table-bordered">
             <tr>
                 <th>#</th>
@@ -49,7 +50,12 @@
             @endforeach
 
         </table>
+
         {{ $movies->links('pagination::bootstrap-4') }}
+
+        @else 
+        <h4 class="text-center p-3">Belum Ada Movie</h4>
+        @endif
     </div>
 
 </div>
