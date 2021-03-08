@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="mb-2">
+    <a href="{{ route('create.movie') }}" class="btn btn-primary">Tambah data Movie</a>
+</div>
+
 <div class="card">
     <div class="card-header">
         <div class="row">
@@ -42,7 +46,7 @@
                 <td>{{ $movie->title }}</td>
                 <td>{{ $movie->thumbnail }}</td>
                 <td>
-                    <a href="{{ route('edit', ['id' => $movie->id]) }}" title="edit" class="btn btn-success btn-sm">
+                    <a href="{{ route('edit.movie', ['id' => $movie->id]) }}" title="edit" class="btn btn-success btn-sm">
                         <i class="fas fa-pen"></i></a>
                 </td>
             </tr>

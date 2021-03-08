@@ -29,6 +29,7 @@ class UsersController extends Controller
             ->paginate(15);
 
         $request = $request->all();
+
         return view('dashboard/users/list', [
             'users' => $users,
             'request' => $request,
