@@ -54,7 +54,7 @@
         {{ $movies->links('pagination::bootstrap-4') }}
 
         @else 
-        <h4 class="text-center p-3">Belum Ada Movie</h4>
+        <h4 class="text-center p-3">Belum Ada Data Movie</h4>
         @endif
     </div>
 
