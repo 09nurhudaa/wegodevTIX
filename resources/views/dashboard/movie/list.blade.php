@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="mb-2">
-    <a href="{{ route('create.movie') }}" class="btn btn-primary">Tambah data Movie</a>
+    <a href="{{ route('create.movie') }}" class="btn btn-primary btn-sm">Tambah data Movie</a>
 </div>
 
 <div class="card">
@@ -33,18 +33,24 @@
         @if($movies->total())
         <table class="table table-striped table-hover table-bordered">
             <tr>
-                <th>#</th>
-                <th>Title</th>
                 <th>Thumbnail</th>
+                <th>Title</th>
                 <th>&nbsp;</th>
             </tr>
 
             @foreach ($movies as $movie)
 
             <tr>
-                <th scope="row">{{ ($movies->currentPage()-1) * $movies->perPage() + $loop->iteration }}</th>
-                <td>{{ $movie->title }}</td>
-                <td>{{ $movie->thumbnail }}</td>
+                <td class="col-thumbnail">
+                    <img src="{{asset('storage/movies/'.$movie->thumbnail)}}" alt="" class="img-fluid">
+                </td>
+                <td>
+                    <h4>
+                    <strong>
+                        {{ $movie->title }}
+                    </strong>
+                </h4>
+                </td>
                 <td>
                     <a href="{{ route('edit.movie', ['id' => $movie->id]) }}" title="edit" class="btn btn-success btn-sm">
                         <i class="fas fa-pen"></i></a>
