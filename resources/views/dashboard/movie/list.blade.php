@@ -52,7 +52,7 @@
                 </h4>
                 </td>
                 <td>
-                    <a href="{{ route('edit.movie', ['id' => $movie->id]) }}" title="edit" class="btn btn-success btn-sm">
+                    <a href="{{ route('edit.movie', $movie->id) }}" title="edit" class="btn btn-success btn-sm">
                         <i class="fas fa-pen"></i></a>
                 </td>
             </tr>
