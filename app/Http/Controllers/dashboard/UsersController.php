@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -94,10 +95,21 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = USER::find($id);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->save();
-        return redirect('dashboard/users');
+
+        $validator = VALIDATOR::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|unique:App\Models\User,email,' . $id
+        ]);
+        if ($validator->fails()) {
+            return redirect('dashboard/users/' . $id)
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->save();
+            return redirect('dashboard/users');
+        }
     }
 
     /**
