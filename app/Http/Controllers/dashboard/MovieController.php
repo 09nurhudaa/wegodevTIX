@@ -42,14 +42,13 @@ class MovieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Movie $movie)
+    public function create()
     {
         $active = 'Movies';
         return view('dashboard/movie/form', [
             'active' => $active,
-            'movie' => $movie,
             'button' => 'Create',
-            'url'   => 'create.movie'
+            'url'   => 'store.movie'
         ]);
     }
 
@@ -159,6 +158,9 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+
+        return redirect()
+            ->route('movies');
     }
 }
