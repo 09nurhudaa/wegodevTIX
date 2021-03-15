@@ -6,6 +6,15 @@
     <a href="{{ route('create.movie') }}" class="btn btn-primary btn-sm">Tambah data Movie</a>
 </div>
 
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        <strong>{{session()->get('message')}}</strong>
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div>
+@endif
+
 <div class="card">
     <div class="card-header">
         <div class="row">
